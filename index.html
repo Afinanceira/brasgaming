@@ -16,6 +16,8 @@
             --accent-blue: #0052cc;
             --accent-cyan: #0099ff;
             --accent-gold: #d97706;
+            --accent-ra-green: #22c55e;
+            --accent-ra-darkgreen: #15803d;
             --accent-dark: #0f172a;
             --text-main: #1e293b;
             --text-muted: #64748b;
@@ -53,7 +55,7 @@
             backdrop-filter: blur(16px);
             border-bottom: 1px solid var(--border-subtle);
             z-index: 1000;
-            padding: 1rem 8%;
+            padding: 1rem 6%;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -89,20 +91,29 @@
 
         .nav-links {
             display: flex;
-            gap: 2rem;
+            gap: 1.8rem;
             list-style: none;
         }
 
         .nav-links a {
             color: var(--text-main);
             text-decoration: none;
-            font-size: 0.95rem;
+            font-size: 0.9rem;
             font-weight: 600;
             transition: all 0.3s ease;
         }
 
         .nav-links a:hover {
             color: var(--accent-blue);
+        }
+
+        .nav-links a.nav-ra {
+            color: var(--accent-ra-darkgreen);
+            font-weight: 700;
+        }
+
+        .nav-links a.nav-ra:hover {
+            color: var(--accent-ra-green);
         }
 
         .btn-cta {
@@ -122,7 +133,7 @@
             box-shadow: 0 6px 20px rgba(0, 82, 204, 0.4);
         }
 
-        /* Hero Section com Imagem 3D de Cassino */
+        /* Hero Section */
         .hero {
             position: relative;
             padding: 160px 8% 100px;
@@ -192,23 +203,142 @@
             font-weight: 600;
         }
 
+        /* Container 3D iGaming */
         .hero-image-card {
             position: relative;
             border-radius: 20px;
             overflow: hidden;
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
-            border: 1px solid var(--border-subtle);
+            background: linear-gradient(135deg, #0b1329 0%, #172a54 100%);
+            box-shadow: 0 25px 50px -12px rgba(0, 82, 204, 0.3);
+            border: 2px solid rgba(0, 153, 255, 0.3);
+            padding: 3rem 2rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
         }
 
-        .hero-image-card img {
+        .casino-3d-scene {
             width: 100%;
+            max-width: 380px;
             height: auto;
-            display: block;
-            transition: transform 0.5s ease;
+            filter: drop-shadow(0 15px 25px rgba(0, 240, 255, 0.4));
+            animation: float3d 4s ease-in-out infinite;
         }
 
-        .hero-image-card:hover img {
-            transform: scale(1.03);
+        @keyframes float3d {
+            0% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-12px) rotate(1deg); }
+            100% { transform: translateY(0px) rotate(0deg); }
+        }
+
+        .hero-image-card .igaming-badge {
+            margin-top: 1.5rem;
+            background: rgba(0, 240, 255, 0.15);
+            border: 1px solid #00f0ff;
+            color: #00f0ff;
+            padding: 0.5rem 1.2rem;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        /* Estilos para a Seção de Retenção iGaming (Nova Estrutura) */
+        .retention-section {
+            background-color: #ffffff;
+            padding: 90px 8%;
+            border-bottom: 1px solid var(--border-subtle);
+        }
+
+        .retention-container {
+            display: grid;
+            grid-template-columns: 1fr 1.1fr;
+            gap: 4rem;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .retention-image-box {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .retention-image-box img {
+            width: 100%;
+            max-width: 480px;
+            height: auto;
+            object-fit: contain;
+            filter: drop-shadow(0 15px 30px rgba(0, 0, 0, 0.08));
+        }
+
+        .retention-content-box {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .retention-dot-title {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            margin-bottom: 1rem;
+        }
+
+        .green-dot {
+            width: 10px;
+            height: 10px;
+            background-color: #22c55e;
+            border-radius: 50%;
+            margin-top: 12px;
+            flex-shrink: 0;
+        }
+
+        .retention-content-box h2 {
+            font-family: var(--font-main);
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: var(--accent-dark);
+            line-height: 1.25;
+            letter-spacing: -0.5px;
+        }
+
+        .retention-content-box h2 span {
+            color: #22c55e;
+        }
+
+        .retention-description {
+            color: var(--text-muted);
+            font-size: 1.05rem;
+            line-height: 1.7;
+            margin-bottom: 2rem;
+            padding-left: 22px;
+        }
+
+        .retention-grid-points {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.2rem 2rem;
+            padding-left: 22px;
+        }
+
+        .point-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 8px;
+            color: var(--text-main);
+            font-size: 0.95rem;
+            font-weight: 600;
+        }
+
+        .point-bullet {
+            color: var(--text-muted);
+            font-weight: 700;
         }
 
         /* Sections General */
@@ -236,6 +366,122 @@
         .section-title p {
             color: var(--text-muted);
             font-size: 1.05rem;
+        }
+
+        /* NOVA SEÇÃO / TAB EXCLUSIVA RECLAME AQUI */
+        .reclameaqui-section {
+            background: linear-gradient(135deg, #052e16 0%, #064e3b 100%);
+            color: #ffffff;
+            border-top: 4px solid var(--accent-ra-green);
+            border-bottom: 4px solid var(--accent-ra-green);
+            padding: 100px 8%;
+        }
+
+        .ra-container {
+            display: grid;
+            grid-template-columns: 1.1fr 0.9fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .ra-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(34, 197, 94, 0.2);
+            border: 1px solid var(--accent-ra-green);
+            color: #4ade80;
+            padding: 0.5rem 1.2rem;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            letter-spacing: 0.5px;
+        }
+
+        .ra-content h2 {
+            font-family: var(--font-main);
+            font-size: 2.6rem;
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+            color: #ffffff;
+        }
+
+        .ra-content h2 span {
+            color: #4ade80;
+        }
+
+        .ra-content p {
+            color: #d1fae5;
+            font-size: 1.05rem;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+
+        .ra-card-feature {
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(74, 222, 128, 0.3);
+            border-radius: 16px;
+            padding: 2.5rem;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+        }
+
+        .ra-badge-box {
+            background: #ffffff;
+            border-radius: 12px;
+            padding: 1.5rem;
+            text-align: center;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        }
+
+        .ra-badge-box h3 {
+            color: #15803d;
+            font-size: 2.2rem;
+            font-weight: 800;
+            margin-bottom: 0.3rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .ra-badge-box p {
+            color: #1e293b;
+            font-weight: 700;
+            font-size: 0.95rem;
+            margin: 0;
+        }
+
+        .ra-metrics-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .ra-metrics-list li {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            color: #f0fdf4;
+            font-size: 1rem;
+            font-weight: 600;
+        }
+
+        .ra-metrics-list li span {
+            background: #22c55e;
+            color: #052e16;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            font-size: 0.85rem;
         }
 
         /* Estrutura - Galeria de Fotos */
@@ -458,16 +704,16 @@
         .badge-ra1000 {
             display: inline-flex;
             align-items: center;
-            background: rgba(217, 119, 6, 0.1);
-            border: 1px solid var(--accent-gold);
-            color: var(--accent-gold);
+            background: rgba(34, 197, 94, 0.1);
+            border: 1px solid var(--accent-ra-green);
+            color: var(--accent-ra-darkgreen);
             padding: 0.6rem 1.2rem;
             border-radius: 8px;
             font-weight: 700;
             font-size: 0.9rem;
         }
 
-        /* Parceiros */
+        /* Parceiros Atendidos - CARDS COLORIDOS */
         .partners-section {
             text-align: center;
             background: #ffffff;
@@ -479,28 +725,53 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            gap: 3rem;
+            gap: 2.5rem;
             flex-wrap: wrap;
-            margin-top: 2rem;
+            margin-top: 2.5rem;
         }
 
         .partner-card {
-            background: var(--bg-light);
-            border: 1px solid var(--border-subtle);
-            padding: 1.2rem 2.8rem;
-            border-radius: 12px;
+            position: relative;
+            padding: 1.8rem 3.5rem;
+            border-radius: 16px;
             font-family: var(--font-main);
-            font-size: 1.5rem;
+            font-size: 1.6rem;
             font-weight: 800;
-            color: var(--accent-dark);
             letter-spacing: 1px;
             transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 240px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            overflow: hidden;
         }
 
         .partner-card:hover {
-            border-color: var(--accent-blue);
-            color: var(--accent-blue);
-            transform: translateY(-3px);
+            transform: translateY(-6px) scale(1.03);
+        }
+
+        .partner-pixbet {
+            background: linear-gradient(135deg, #0d284a 0%, #0052cc 100%);
+            color: #ffffff;
+            box-shadow: 0 12px 30px rgba(0, 82, 204, 0.3);
+        }
+        .partner-pixbet::after {
+            content: "PIXBET";
+            text-shadow: 0 0 10px rgba(0, 240, 255, 0.6);
+        }
+
+        .partner-ganhei {
+            background: linear-gradient(135deg, #111827 0%, #166534 100%);
+            color: #22c55e;
+            box-shadow: 0 12px 30px rgba(22, 101, 52, 0.3);
+        }
+
+        .partner-betsorte {
+            background: linear-gradient(135deg, #1e1b4b 0%, #4338ca 100%);
+            color: #facc15;
+            box-shadow: 0 12px 30px rgba(67, 56, 202, 0.3);
         }
 
         /* Contato */
@@ -634,7 +905,10 @@
         }
 
         @media (max-width: 968px) {
-            .hero, .about-grid, .structure-gallery, .awards-banner, .contact-container { grid-template-columns: 1fr; }
+            .hero, .retention-container, .about-grid, .ra-container, .structure-gallery, .awards-banner, .contact-container { grid-template-columns: 1fr; }
+            .retention-container { gap: 2.5rem; }
+            .retention-description, .retention-grid-points { padding-left: 0; }
+            .retention-grid-points { grid-template-columns: 1fr; gap: 1rem; }
             .structure-subgrid { grid-template-columns: 1fr 1fr; }
             .hero-stats-banner { justify-content: center; }
             .footer-grid { grid-template-columns: 1fr 1fr; }
@@ -653,15 +927,16 @@
         <ul class="nav-links">
             <li><a href="#quem-somos">Quem Somos</a></li>
             <li><a href="#estrutura">Estrutura</a></li>
+            <li><a href="#reclame-aqui" class="nav-ra">🟢 Reclame AQUI</a></li>
             <li><a href="#solucoes">Soluções B2B</a></li>
             <li><a href="#valores">Valores</a></li>
-            <li><a href="#premios">Métricas & Prêmios</a></li>
+            <li><a href="#premios">Métricas</a></li>
             <li><a href="#parceiros">Parceiros</a></li>
         </ul>
         <a href="#contato" class="btn-cta">Fale Conosco</a>
     </nav>
 
-    <!-- Hero Section com Imagem de Cassino 3D de Destaque -->
+    <!-- Hero Section -->
     <section class="hero">
         <div>
             <span class="hero-tag">OPERAÇÃO 24/7 & INTELIGÊNCIA B2B</span>
@@ -683,11 +958,116 @@
             </div>
         </div>
         <div class="hero-image-card">
-            <img src="https://images.unsplash.com/photo-1518609878373-06d740f60d8b?auto=format&fit=crop&w=1000&q=80" alt="Plataforma Digital e Cassino 3D de Alta Tecnologia">
+            <svg class="casino-3d-scene" viewBox="0 0 400 320" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="200" cy="160" r="120" fill="#00f0ff" fill-opacity="0.15" filter="blur(20px)" />
+                <circle cx="140" cy="120" r="80" fill="#7000ff" fill-opacity="0.2" filter="blur(15px)" />
+                
+                <ellipse cx="200" cy="220" rx="140" ry="45" fill="url(#paint0_linear)" stroke="#00f0ff" stroke-width="2" />
+                <ellipse cx="200" cy="220" rx="110" ry="32" fill="#0d1b3a" stroke="#0072ff" stroke-width="1.5" />
+                
+                <g filter="url(#drop_shadow_1)">
+                    <ellipse cx="120" cy="140" rx="45" ry="22" fill="url(#gold_chip)" />
+                    <ellipse cx="120" cy="136" rx="45" ry="22" fill="#ffb703" />
+                    <ellipse cx="120" cy="136" rx="30" ry="14" fill="#0f172a" stroke="#ffd166" stroke-width="1.5" />
+                </g>
+                
+                <g filter="url(#drop_shadow_shield)">
+                    <path d="M200 70 L240 90 V140 C240 175 200 200 200 200 C200 200 160 175 160 140 V90 L200 70 Z" fill="url(#shield_grad)" stroke="#00f0ff" stroke-width="2.5"/>
+                    <path d="M190 130 L200 140 L215 125" stroke="#ffffff" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </g>
+                
+                <g filter="url(#drop_shadow_2)">
+                    <path d="M280 120 L310 105 L340 120 L310 135 Z" fill="#00f0ff" />
+                    <path d="M280 120 L310 135 V165 L280 150 Z" fill="#0072ff" />
+                    <path d="M340 120 L310 135 V165 L340 150 Z" fill="#003db3" />
+                    <circle cx="310" cy="120" r="3" fill="#ffffff" />
+                    <circle cx="295" cy="135" r="2.5" fill="#ffffff" />
+                    <circle cx="325" cy="150" r="2.5" fill="#ffffff" />
+                </g>
+
+                <defs>
+                    <linearGradient id="paint0_linear" x1="60" y1="220" x2="340" y2="220" gradientUnits="userSpaceOnUse">
+                        <stop stop-color="#00f0ff" />
+                        <stop offset="0.5" stop-color="#7000ff" />
+                        <stop offset="1" stop-color="#0072ff" />
+                    </linearGradient>
+                    <linearGradient id="gold_chip" x1="75" y1="136" x2="165" y2="136" gradientUnits="userSpaceOnUse">
+                        <stop stop-color="#ffb703" />
+                        <stop offset="1" stop-color="#d97706" />
+                    </linearGradient>
+                    <linearGradient id="shield_grad" x1="160" y1="70" x2="240" y2="200" gradientUnits="userSpaceOnUse">
+                        <stop stop-color="#00f0ff" />
+                        <stop offset="1" stop-color="#0052cc" />
+                    </linearGradient>
+                </defs>
+            </svg>
+            <div class="igaming-badge">🛡️ Suporte & Anti-Fraude iGaming</div>
         </div>
     </section>
 
-    <!-- TAB / Seção de Estrutura Física com Fotos Anexadas -->
+    <!-- SEÇÃO ANEXADA: Retenção & Desempenho iGaming -->
+    <section class="retention-section">
+        <div class="retention-container">
+            <div class="retention-image-box">
+                <img src="https://images.unsplash.com/photo-1511193311914-0346f16efe90?auto=format&fit=crop&w=800&q=80" alt="Plataforma de Apostas e iGaming">
+            </div>
+            <div class="retention-content-box">
+                <div class="retention-dot-title">
+                    <span class="green-dot"></span>
+                    <h2>Aquisição não é o maior problema no <span>iGaming</span>.</h2>
+                </div>
+                
+                <p class="retention-description">
+                    Operadores perdem jogadores devido ao abandono de KYC, atrito no onboarding, CRM reativo e baixo engajamento no primeiro dia.
+                </p>
+
+                <div class="retention-grid-points">
+                    <div class="point-item">
+                        <span class="point-bullet">•</span>
+                        <span>Abandono no KYC</span>
+                    </div>
+                    <div class="point-item">
+                        <span class="point-bullet">•</span>
+                        <span>CRM sem execução humana</span>
+                    </div>
+                    <div class="point-item">
+                        <span class="point-bullet">•</span>
+                        <span>Baixa retenção inicial</span>
+                    </div>
+                    <div class="point-item">
+                        <span class="point-bullet">•</span>
+                        <span>Suporte focado em volume, não em desempenho</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- NOVA TAB / SEÇÃO EXCLUSIVA RECLAME AQUI -->
+    <section id="reclame-aqui" class="reclameaqui-section">
+        <div class="ra-container">
+            <div class="ra-content">
+                <span class="ra-tag">🟢 GESTÃO DE REPUTAÇÃO E BPO</span>
+                <h2>Especialistas em <span>Reclame AQUI</span> para Plataformas iGaming</h2>
+                <p>Nossa equipe é altamente treinada para transformar insatisfações em fidelização. Atuamos com acompanhamento em tempo real, respostas personalizadas e foco total nos critérios de certificação do Reclame AQUI.</p>
+                <p>Garantimos resolução ágil, redução do tempo de resposta e proteção contínua da reputação das marcas parceiras em todo o Brasil.</p>
+            </div>
+            <div class="ra-card-feature">
+                <div class="ra-badge-box">
+                    <h3>⭐ SELO RA1000</h3>
+                    <p>Padrão Máximo de Reputação e Qualidade</p>
+                </div>
+                <ul class="ra-metrics-list">
+                    <li><span>✓</span> Alto Índice de Resposta em Minutos</li>
+                    <li><span>✓</span> Elevada Taxa de Solução de Demandas</li>
+                    <li><span>✓</span> Aumento Significativo da Nota do Consumidor</li>
+                    <li><span>✓</span> Case Pixbet: Empresa que Mais Evoluiu (Prêmio 2025)</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- TAB / Seção de Estrutura Física -->
     <section id="estrutura">
         <div class="section-title">
             <h2>Nossa Estrutura Física</h2>
@@ -727,13 +1107,13 @@
         <div class="about-grid">
             <div class="about-card">
                 <h3>Quem Somos</h3>
-                <p>A <strong>BrasGaming</strong> nasceu em <strong>Campina Grande, Paraíba</strong> — cidade reconhecida por sua força em tecnologia, inovação e formação de talentos.[cite: 1] Desde o início, fomos criados com o propósito de oferecer soluções digitais e atendimento especializado, conectando pessoas, tecnologia e eficiência.[cite: 1]</p>
-                <p>Fundada em <strong>2020</strong>, iniciamos nossa trajetória acompanhando o crescimento acelerado das plataformas online e a necessidade do mercado por um atendimento cada vez mais ágil, humano e profissional.[cite: 1]</p>
+                <p>A <strong>BrasGaming</strong> nasceu em <strong>Campina Grande, Paraíba</strong> — cidade reconhecida por sua força em tecnologia, inovação e formação de talentos. Desde o início, fomos criados com o propósito de oferecer soluções digitais e atendimento especializado, conectando pessoas, tecnologia e eficiência.</p>
+                <p>Fundada em <strong>2020</strong>, iniciamos nossa trajetória acompanhando o crescimento acelerado das plataformas online e a necessidade do mercado por um atendimento cada vez mais ágil, humano e profissional.</p>
             </div>
             <div class="about-card">
                 <h3>Nosso Propósito</h3>
-                <p>Oferecer atendimento e suporte digital com <strong>Qualidade, Agilidade e Responsabilidade</strong>, gerando valor contínuo para nossas empresas parceiras e usuários finais.[cite: 1]</p>
-                <p>Com atuação terceirizada B2B, atuamos como um braço estratégico das operações digitais, garantindo controle, eficiência e redução drástica de custos.[cite: 1]</p>
+                <p>Oferecer atendimento e suporte digital com <strong>Qualidade, Agilidade e Responsabilidade</strong>, gerando valor contínuo para nossas empresas parceiras e usuários finais.</p>
+                <p>Com atuação terceirizada B2B, atuamos como um braço estratégico das operações digitais, garantindo controle, eficiência e redução drástica de custos.</p>
             </div>
         </div>
     </section>
@@ -742,38 +1122,38 @@
     <section id="solucoes">
         <div class="section-title">
             <h2>Áreas de Atuação e Soluções</h2>
-            <p>Estrutura completa de suporte e segurança adaptada para cada cliente e parceiro.[cite: 1]</p>
+            <p>Estrutura completa de suporte e segurança adaptada para cada cliente e parceiro.</p>
         </div>
         <div class="grid-3">
             <div class="card">
                 <div class="card-icon">🛡️</div>
                 <h3>Segurança & Prevenção a Fraudes</h3>
-                <p>Monitoramento ativo e identificação proativa de comportamentos suspeitos, proteção contra golpes operacionais e análises rigorosas de risco para blindar sua plataforma.[cite: 1]</p>
+                <p>Monitoramento ativo e identificação proativa de comportamentos suspeitos, proteção contra golpes operacionais e análises rigorosas de risco para blindar sua plataforma.</p>
             </div>
             <div class="card">
                 <div class="card-icon">💬</div>
                 <h3>Atendimento Multi-Canal</h3>
-                <p>Suporte omnicanal via Chat ao Vivo, Voz, E-mail e gestão especializada na plataforma <strong>Reclame AQUI</strong>, mantendo altas taxas de satisfação (CSAT).[cite: 1]</p>
+                <p>Suporte omnicanal via Chat ao Vivo, Voz, E-mail e gestão especializada na plataforma <strong>Reclame AQUI</strong>, mantendo altas taxas de satisfação (CSAT).</p>
             </div>
             <div class="card">
                 <div class="card-icon">📊</div>
                 <h3>Gestão de CRM & Relacionamento</h3>
-                <p>Controle e rastreabilidade total das interações com clientes, otimização de fluxos de engajamento e melhoria contínua na retenção de usuários.[cite: 1]</p>
+                <p>Controle e rastreabilidade total das interações com clientes, otimização de fluxos de engajamento e melhoria contínua na retenção de usuários.</p>
             </div>
             <div class="card">
                 <div class="card-icon">⚖️</div>
                 <h3>Compliance & Monitoramento</h3>
-                <p>Acompanhamento regulatório rigoroso, monitoramento continuo das operações e garantia de conformidade com os padrões do setor de apostas e jogos.[cite: 1]</p>
+                <p>Acompanhamento regulatório rigoroso, monitoramento continuo das operações e garantia de conformidade com os padrões do setor de apostas e jogos.</p>
             </div>
             <div class="card">
                 <div class="card-icon">⚙️</div>
                 <h3>Melhoria de Processos Operacionais</h3>
-                <p>Otimização constante de fluxos de suporte para promover maior eficiência operacional, reduzindo gargalos e custos de atendimento B2B.[cite: 1]</p>
+                <p>Otimização constante de fluxos de suporte para promover maior eficiência operacional, reduzindo gargalos e custos de atendimento B2B.</p>
             </div>
             <div class="card">
                 <div class="card-icon">👥</div>
                 <h3>Equipe Especializada e Treinada</h3>
-                <p>Profissionais capacitados para análises críticas e suporte contínuo em cenários de alta demanda e picos de acessos.[cite: 1]</p>
+                <p>Profissionais capacitados para análises críticas e suporte contínuo em cenários de alta demanda e picos de acessos.</p>
             </div>
         </div>
     </section>
@@ -782,28 +1162,28 @@
     <section id="valores" style="background: #ffffff;">
         <div class="section-title">
             <h2>Nossos Valores</h2>
-            <p>Os pilares fundamentais que guiam nossas relações operacionais e parcerias B2B.[cite: 1]</p>
+            <p>Os pilares fundamentais que guiam nossas relações operacionais e parcerias B2B.</p>
         </div>
         <div class="values-grid">
             <div class="value-card">
                 <h4>Compromisso com Qualidade</h4>
-                <p>Atenção rigorosa aos detalhes para garantir um atendimento rápido e eficaz.[cite: 1]</p>
+                <p>Atenção rigorosa aos detalhes para garantir um atendimento rápido e eficaz.</p>
             </div>
             <div class="value-card">
                 <h4>Ética e Transparência</h4>
-                <p>Atuação com absoluto profissionalismo e respeito em todas as relações corporativas.[cite: 1]</p>
+                <p>Atuação com absoluto profissionalismo e respeito em todas as relações corporativas.</p>
             </div>
             <div class="value-card">
                 <h4>Valorização das Pessoas</h4>
-                <p>Acreditar no desenvolvimento constante das equipes como base para a excelência.[cite: 1]</p>
+                <p>Acreditar no desenvolvimento constante das equipes como base para a excelência.</p>
             </div>
             <div class="value-card">
                 <h4>Inovação e Melhoria Contínua</h4>
-                <p>Busca incessante por novas tecnologias para acompanhar o mercado digital.[cite: 1]</p>
+                <p>Busca incessante por novas tecnologias para acompanhar o mercado digital.</p>
             </div>
             <div class="value-card">
                 <h4>Responsabilidade e Confiança</h4>
-                <p>Construção de parcerias sólidas, sustentáveis e pautadas pela transparência.[cite: 1]</p>
+                <p>Construção de parcerias sólidas, sustentáveis e pautadas pela transparência.</p>
             </div>
         </div>
     </section>
@@ -812,7 +1192,7 @@
     <section id="premios">
         <div class="section-title">
             <h2>Resultados Alcançados e Reconhecimento</h2>
-            <p>Métricas consolidadas de excelência operacional e reputação comprovada no mercado.[cite: 1]</p>
+            <p>Métricas consolidadas de excelência operacional e reputação comprovada no mercado.</p>
         </div>
         <div class="awards-banner">
             <div class="metrics-subgrid">
@@ -835,11 +1215,11 @@
             </div>
             <div class="award-info">
                 <h3>🏆 Destaques & Cases de Sucesso</h3>
-                <p>A BrasGaming vem se destacando no mercado pela excelência e evolução contínua em atendimento, sendo reconhecida pelos principais indicadores de reputação do país:[cite: 1]</p>
+                <p>A BrasGaming vem se destacando no mercado pela excelência e evolução contínua em atendimento, sendo reconhecida pelos principais indicadores de reputação do país:</p>
                 <p>• <strong>Pixbet (Prêmio Reclame AQUI 2025):</strong> Reconhecimento como a empresa que mais evoluiu no setor.[cite: 1]</p>
                 <p>• <strong>Empresa Indicada ao Prêmio Reclame AQUI:</strong> Reforçando a confiança máxima dos usuários finais.[cite: 1]</p>
                 <div class="badge-ra1000">
-                    ⭐ Selo RA1000 nos Parceiros (Altos Padrões de Satisfação, Resposta e Solução)[cite: 1]
+                    ⭐ Selo RA1000 nos Parceiros (Altos Padrões de Satisfação, Resposta e Solução)
                 </div>
             </div>
         </div>
@@ -849,12 +1229,12 @@
     <section id="parceiros" class="partners-section">
         <div class="section-title">
             <h2>Parceiros Atendidos</h2>
-            <p>Prestação de serviço B2B terceirizado para grandes plataformas de apostas online.[cite: 1]</p>
+            <p>Prestação de serviço B2B terceirizado para grandes plataformas de apostas online.</p>
         </div>
         <div class="partners-grid">
-            <div class="partner-card">PIXBET</div>
-            <div class="partner-card">GANHEI BET</div>
-            <div class="partner-card">BET DA SORTE</div>
+            <div class="partner-card partner-pixbet"></div>
+            <div class="partner-card partner-ganhei">GANHEI BET</div>
+            <div class="partner-card partner-betsorte">BET DA SORTE</div>
         </div>
     </section>
 
@@ -868,14 +1248,14 @@
                     <div class="contact-icon">📍</div>
                     <div>
                         <strong>Localização:</strong><br>
-                        Campina Grande - PB[cite: 1]
+                        Campina Grande - PB
                     </div>
                 </div>
                 <div class="contact-item">
                     <div class="contact-icon">📞</div>
                     <div>
                         <strong>Telefone / WhatsApp:</strong><br>
-                        (83) 99832-5647[cite: 1]
+                        (83) 99832-5647
                     </div>
                 </div>
             </div>
@@ -905,35 +1285,35 @@
                     <span class="logo-title" style="color: #fff;">bras<span style="color: #00f0ff;">gaming</span></span>
                     <span class="logo-subtitle" style="color: #00f0ff;">Consulting and Services</span>
                 </a>
-                <p>Unindo tecnologia, pessoas e estratégia para oferecer suporte ágil, seguro e humanizado para plataformas digitais.[cite: 1]</p>
+                <p>Unindo tecnologia, pessoas e estratégia para oferecer suporte ágil, seguro e humanizado para plataformas digitais.</p>
             </div>
             <div class="footer-col">
                 <h4>Navegação</h4>
                 <ul>
                     <li><a href="#quem-somos">Quem Somos</a></li>
                     <li><a href="#estrutura">Estrutura</a></li>
+                    <li><a href="#reclame-aqui">Reclame AQUI</a></li>
                     <li><a href="#solucoes">Soluções</a></li>
-                    <li><a href="#valores">Valores</a></li>
                 </ul>
             </div>
             <div class="footer-col">
                 <h4>Áreas de Atuação</h4>
                 <ul>
-                    <li>Prevenção a Fraudes[cite: 1]</li>
-                    <li>Atendimento 24/7 (Chat, Voz, E-mail)[cite: 1]</li>
-                    <li>Gestão de CRM & Reclame AQUI[cite: 1]</li>
+                    <li>Prevenção a Fraudes</li>
+                    <li>Atendimento 24/7 (Chat, Voz, E-mail)</li>
+                    <li>Gestão de CRM & Reclame AQUI</li>
                 </ul>
             </div>
             <div class="footer-col">
                 <h4>Contato</h4>
                 <ul>
-                    <li>📍 Campina Grande - PB[cite: 1]</li>
-                    <li>📞 (83) 99832-5647[cite: 1]</li>
+                    <li>📍 Campina Grande - PB</li>
+                    <li>📞 (83) 99832-5647</li>
                 </ul>
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2026 BrasGaming Consulting & Services. Todos os direitos reservados. Projeto desenvolvido com inovação e visão de futuro.[cite: 1]</p>
+            <p>&copy; 2026 BrasGaming Consulting & Services. Todos os direitos reservados. Projeto desenvolvido com inovação e visão de futuro.</p>
         </div>
     </footer>
 
