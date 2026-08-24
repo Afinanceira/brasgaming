@@ -232,26 +232,27 @@
             }
         }
 
-        /* Seção De Ponta a Ponta (Full Width Sem Limites) */
+        /* Seção De Ponta a Ponta com Alta Definição */
         .retention-section-fullwidth {
-            width: 100vw;
-            position: relative;
-            left: 50%;
-            right: 50%;
-            margin-left: -50vw;
-            margin-right: -50vw;
-            background-color: #ffffff;
+            width: 100%;
+            background-color: #0f172a;
             padding: 0;
+            margin: 0;
             overflow: hidden;
-            display: block;
+            display: flex;
+            justify-content: center;
+            align-items: center;
             border-bottom: 1px solid var(--border-subtle);
         }
 
         .retention-fullwidth-img {
             width: 100%;
+            max-width: 1920px;
             height: auto;
             display: block;
-            object-fit: cover;
+            object-fit: contain;
+            image-rendering: -webkit-optimize-contrast;
+            image-rendering: crisp-edges;
         }
 
         /* Sections General */
@@ -872,7 +873,7 @@
         </div>
     </section>
 
-    <!-- Seção de Ponta a Ponta (100% da Largura da Tela) -->
+    <!-- Seção Banner 3D em Alta Definição (De Ponta a Ponta) -->
     <div class="retention-section-fullwidth">
         <img src="roleta-igaming.png" alt="Tecnologia e Inovação no iGaming BrasGaming" class="retention-fullwidth-img">
     </div>
@@ -883,7 +884,7 @@
             <div class="ra-content">
                 <span class="ra-tag">🟢 GESTÃO DE REPUTAÇÃO E BPO</span>
                 <h2>Especialistas em <span>Reclame AQUI</span> para Plataformas iGaming</h2>
-                <p>Nossa equipe é altamente treinada para transformar insatisfações em fidelização. Atuamos com acompanhamento em tempo real, respostas personalizadas e foco total nos critérios de certificação do Reclame AQUI.</p>
+                <p>Nossa equipe é highly treinada para transformar insatisfações em fidelização. Atuamos com acompanhamento em tempo real, respostas personalizadas e foco total nos critérios de certificação do Reclame AQUI.</p>
                 <p>Garantimos resolução ágil, redução do tempo de resposta e proteção contínua da reputação das marcas parceiras em todo o Brasil.</p>
             </div>
             <div class="ra-card-feature">
