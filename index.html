@@ -203,15 +203,15 @@
             font-weight: 600;
         }
 
-        /* Container 3D iGaming */
+        /* Container do Card com Imagem Animada */
         .hero-image-card {
             position: relative;
-            border-radius: 20px;
+            border-radius: 24px;
             overflow: hidden;
             background: linear-gradient(135deg, #0b1329 0%, #172a54 100%);
-            box-shadow: 0 25px 50px -12px rgba(0, 82, 204, 0.3);
+            box-shadow: 0 25px 50px -12px rgba(0, 82, 204, 0.35);
             border: 2px solid rgba(0, 153, 255, 0.3);
-            padding: 3rem 2rem;
+            padding: 2.5rem 2rem;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -219,18 +219,26 @@
             text-align: center;
         }
 
-        .casino-3d-scene {
+        .hero-hero-img {
             width: 100%;
-            max-width: 380px;
+            max-width: 420px;
             height: auto;
-            filter: drop-shadow(0 15px 25px rgba(0, 240, 255, 0.4));
+            border-radius: 16px;
+            object-fit: cover;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
             animation: float3d 4s ease-in-out infinite;
         }
 
         @keyframes float3d {
-            0% { transform: translateY(0px) rotate(0deg); }
-            50% { transform: translateY(-12px) rotate(1deg); }
-            100% { transform: translateY(0px) rotate(0deg); }
+            0% {
+                transform: translateY(0px) scale(1);
+            }
+            50% {
+                transform: translateY(-10px) scale(1.02);
+            }
+            100% {
+                transform: translateY(0px) scale(1);
+            }
         }
 
         .hero-image-card .igaming-badge {
@@ -246,7 +254,7 @@
             text-transform: uppercase;
         }
 
-        /* Estilos para a Seção de Retenção iGaming (Nova Estrutura) */
+        /* Seção de Retenção iGaming */
         .retention-section {
             background-color: #ffffff;
             padding: 90px 8%;
@@ -368,7 +376,7 @@
             font-size: 1.05rem;
         }
 
-        /* NOVA SEÇÃO / TAB EXCLUSIVA RECLAME AQUI */
+        /* TAB EXCLUSIVA RECLAME AQUI */
         .reclameaqui-section {
             background: linear-gradient(135deg, #052e16 0%, #064e3b 100%);
             color: #ffffff;
@@ -713,7 +721,7 @@
             font-size: 0.9rem;
         }
 
-        /* Parceiros Atendidos - CARDS COLORIDOS */
+        /* Parceiros Atendidos */
         .partners-section {
             text-align: center;
             background: #ffffff;
@@ -936,7 +944,7 @@
         <a href="#contato" class="btn-cta">Fale Conosco</a>
     </nav>
 
-    <!-- Hero Section -->
+    <!-- Hero Section com Imagem Animada -->
     <section class="hero">
         <div>
             <span class="hero-tag">OPERAÇÃO 24/7 & INTELIGÊNCIA B2B</span>
@@ -958,54 +966,12 @@
             </div>
         </div>
         <div class="hero-image-card">
-            <svg class="casino-3d-scene" viewBox="0 0 400 320" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <circle cx="200" cy="160" r="120" fill="#00f0ff" fill-opacity="0.15" filter="blur(20px)" />
-                <circle cx="140" cy="120" r="80" fill="#7000ff" fill-opacity="0.2" filter="blur(15px)" />
-                
-                <ellipse cx="200" cy="220" rx="140" ry="45" fill="url(#paint0_linear)" stroke="#00f0ff" stroke-width="2" />
-                <ellipse cx="200" cy="220" rx="110" ry="32" fill="#0d1b3a" stroke="#0072ff" stroke-width="1.5" />
-                
-                <g filter="url(#drop_shadow_1)">
-                    <ellipse cx="120" cy="140" rx="45" ry="22" fill="url(#gold_chip)" />
-                    <ellipse cx="120" cy="136" rx="45" ry="22" fill="#ffb703" />
-                    <ellipse cx="120" cy="136" rx="30" ry="14" fill="#0f172a" stroke="#ffd166" stroke-width="1.5" />
-                </g>
-                
-                <g filter="url(#drop_shadow_shield)">
-                    <path d="M200 70 L240 90 V140 C240 175 200 200 200 200 C200 200 160 175 160 140 V90 L200 70 Z" fill="url(#shield_grad)" stroke="#00f0ff" stroke-width="2.5"/>
-                    <path d="M190 130 L200 140 L215 125" stroke="#ffffff" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
-                </g>
-                
-                <g filter="url(#drop_shadow_2)">
-                    <path d="M280 120 L310 105 L340 120 L310 135 Z" fill="#00f0ff" />
-                    <path d="M280 120 L310 135 V165 L280 150 Z" fill="#0072ff" />
-                    <path d="M340 120 L310 135 V165 L340 150 Z" fill="#003db3" />
-                    <circle cx="310" cy="120" r="3" fill="#ffffff" />
-                    <circle cx="295" cy="135" r="2.5" fill="#ffffff" />
-                    <circle cx="325" cy="150" r="2.5" fill="#ffffff" />
-                </g>
-
-                <defs>
-                    <linearGradient id="paint0_linear" x1="60" y1="220" x2="340" y2="220" gradientUnits="userSpaceOnUse">
-                        <stop stop-color="#00f0ff" />
-                        <stop offset="0.5" stop-color="#7000ff" />
-                        <stop offset="1" stop-color="#0072ff" />
-                    </linearGradient>
-                    <linearGradient id="gold_chip" x1="75" y1="136" x2="165" y2="136" gradientUnits="userSpaceOnUse">
-                        <stop stop-color="#ffb703" />
-                        <stop offset="1" stop-color="#d97706" />
-                    </linearGradient>
-                    <linearGradient id="shield_grad" x1="160" y1="70" x2="240" y2="200" gradientUnits="userSpaceOnUse">
-                        <stop stop-color="#00f0ff" />
-                        <stop offset="1" stop-color="#0052cc" />
-                    </linearGradient>
-                </defs>
-            </svg>
+            <img src="https://apostas.cnnbrasil.com.br/wp-content/uploads/sites/21/2024/10/AdobeStock_849840351.jpeg?w=1200&h=900&crop=0&quality=90" alt="Plataforma iGaming Futebol e Casino" class="hero-hero-img">
             <div class="igaming-badge">🛡️ Suporte & Anti-Fraude iGaming</div>
         </div>
     </section>
 
-    <!-- SEÇÃO ANEXADA: Retenção & Desempenho iGaming -->
+    <!-- Seção Retenção & Desempenho iGaming -->
     <section class="retention-section">
         <div class="retention-container">
             <div class="retention-image-box">
@@ -1043,13 +1009,13 @@
         </div>
     </section>
 
-    <!-- NOVA TAB / SEÇÃO EXCLUSIVA RECLAME AQUI -->
+    <!-- TAB EXCLUSIVA RECLAME AQUI -->
     <section id="reclame-aqui" class="reclameaqui-section">
         <div class="ra-container">
             <div class="ra-content">
                 <span class="ra-tag">🟢 GESTÃO DE REPUTAÇÃO E BPO</span>
                 <h2>Especialistas em <span>Reclame AQUI</span> para Plataformas iGaming</h2>
-                <p>Nossa equipe é altamente treinada para transformar insatisfações em fidelização. Atuamos com acompanhamento em tempo real, respostas personalizadas e foco total nos critérios de certificação do Reclame AQUI.</p>
+                <p>Nossa equipe é highly treinada para transformar insatisfações em fidelização. Atuamos com acompanhamento em tempo real, respostas personalizadas e foco total nos critérios de certificação do Reclame AQUI.</p>
                 <p>Garantimos resolução ágil, redução do tempo de resposta e proteção contínua da reputação das marcas parceiras em todo o Brasil.</p>
             </div>
             <div class="ra-card-feature">
@@ -1067,7 +1033,7 @@
         </div>
     </section>
 
-    <!-- TAB / Seção de Estrutura Física -->
+    <!-- Estrutura Física -->
     <section id="estrutura">
         <div class="section-title">
             <h2>Nossa Estrutura Física</h2>
@@ -1098,7 +1064,7 @@
         </div>
     </section>
 
-    <!-- Quem Somos & Propósito -->
+    <!-- Quem Somos -->
     <section id="quem-somos" style="background: #ffffff;">
         <div class="section-title">
             <h2>Nossa História e Propósito</h2>
@@ -1118,7 +1084,7 @@
         </div>
     </section>
 
-    <!-- Principais Soluções e Áreas de Atuação -->
+    <!-- Soluções -->
     <section id="solucoes">
         <div class="section-title">
             <h2>Áreas de Atuação e Soluções</h2>
@@ -1188,7 +1154,7 @@
         </div>
     </section>
 
-    <!-- Prêmios e Métricas -->
+    <!-- Métricas -->
     <section id="premios">
         <div class="section-title">
             <h2>Resultados Alcançados e Reconhecimento</h2>
@@ -1225,7 +1191,7 @@
         </div>
     </section>
 
-    <!-- Parceiros B2B -->
+    <!-- Parceiros -->
     <section id="parceiros" class="partners-section">
         <div class="section-title">
             <h2>Parceiros Atendidos</h2>
@@ -1238,7 +1204,7 @@
         </div>
     </section>
 
-    <!-- Fale Conosco / Contato -->
+    <!-- Contato -->
     <section id="contato">
         <div class="contact-container">
             <div class="contact-info">
