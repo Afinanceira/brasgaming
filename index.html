@@ -10,16 +10,16 @@
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
         :root {
-            --bg-dark: #07090e;
-            --bg-card: #0f141d;
-            --bg-card-hover: #162030;
-            --accent-cyan: #00f0ff;
-            --accent-blue: #0072ff;
-            --accent-purple: #7000ff;
-            --accent-gold: #ffb703;
-            --text-main: #f0f4f8;
-            --text-muted: #94a3b8;
-            --border-glow: rgba(0, 240, 255, 0.2);
+            --bg-light: #f4f6f9;
+            --bg-card: #ffffff;
+            --bg-card-hover: #f8fafc;
+            --accent-blue: #0052cc;
+            --accent-cyan: #0099ff;
+            --accent-gold: #d97706;
+            --accent-dark: #0f172a;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --border-subtle: #e2e8f0;
             --font-main: 'Plus Jakarta Sans', sans-serif;
         }
 
@@ -36,7 +36,7 @@
         }
 
         body {
-            background-color: var(--bg-dark);
+            background-color: var(--bg-light);
             color: var(--text-main);
             font-family: var(--font-main);
             line-height: 1.6;
@@ -44,32 +44,20 @@
             font-size: 16px;
         }
 
-        /* Ambient Glow Backgrounds */
-        .glow-sphere {
-            position: absolute;
-            border-radius: 50%;
-            filter: blur(140px);
-            z-index: 0;
-            pointer-events: none;
-            opacity: 0.3;
-        }
-        .glow-1 { top: -100px; left: -100px; width: 500px; height: 500px; background: var(--accent-purple); }
-        .glow-2 { top: 800px; right: -100px; width: 600px; height: 600px; background: var(--accent-cyan); }
-        .glow-3 { top: 2000px; left: -100px; width: 500px; height: 500px; background: var(--accent-blue); }
-
         /* Navigation */
         nav {
             position: fixed;
             top: 0;
             width: 100%;
-            background: rgba(7, 9, 14, 0.9);
+            background: rgba(255, 255, 255, 0.92);
             backdrop-filter: blur(16px);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            border-bottom: 1px solid var(--border-subtle);
             z-index: 1000;
-            padding: 1.2rem 8%;
+            padding: 1rem 8%;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.03);
         }
 
         .logo {
@@ -82,18 +70,18 @@
             font-family: var(--font-main);
             font-size: 1.6rem;
             font-weight: 800;
-            color: #fff;
+            color: var(--accent-dark);
             letter-spacing: -0.5px;
         }
 
         .logo-title span {
-            color: var(--accent-cyan);
+            color: var(--accent-blue);
         }
 
         .logo-subtitle {
             font-size: 0.65rem;
             font-family: var(--font-main);
-            color: var(--accent-cyan);
+            color: var(--accent-blue);
             letter-spacing: 2px;
             text-transform: uppercase;
             font-weight: 700;
@@ -101,74 +89,75 @@
 
         .nav-links {
             display: flex;
-            gap: 2.2rem;
+            gap: 2rem;
             list-style: none;
         }
 
         .nav-links a {
-            color: var(--text-muted);
+            color: var(--text-main);
             text-decoration: none;
             font-size: 0.95rem;
-            font-weight: 500;
+            font-weight: 600;
             transition: all 0.3s ease;
         }
 
         .nav-links a:hover {
-            color: var(--accent-cyan);
-            text-shadow: 0 0 10px rgba(0, 240, 255, 0.5);
+            color: var(--accent-blue);
         }
 
         .btn-cta {
-            background: linear-gradient(135deg, var(--accent-cyan), var(--accent-blue));
-            color: #000;
+            background: linear-gradient(135deg, var(--accent-blue), var(--accent-cyan));
+            color: #fff;
             padding: 0.75rem 1.6rem;
-            border-radius: 6px;
+            border-radius: 8px;
             font-weight: 700;
             text-decoration: none;
             font-size: 0.9rem;
             transition: transform 0.3s, box-shadow 0.3s;
-            box-shadow: 0 0 20px rgba(0, 240, 255, 0.3);
+            box-shadow: 0 4px 15px rgba(0, 82, 204, 0.25);
         }
 
         .btn-cta:hover {
             transform: translateY(-2px);
-            box-shadow: 0 0 30px rgba(0, 240, 255, 0.6);
+            box-shadow: 0 6px 20px rgba(0, 82, 204, 0.4);
         }
 
-        /* Hero Section */
+        /* Hero Section com Imagem 3D de Cassino */
         .hero {
             position: relative;
-            padding: 180px 8% 100px;
+            padding: 160px 8% 100px;
             display: grid;
-            grid-template-columns: 1.2fr 0.8fr;
+            grid-template-columns: 1.1fr 0.9fr;
             gap: 4rem;
             align-items: center;
+            background: linear-gradient(180deg, #ffffff 0%, var(--bg-light) 100%);
         }
 
         .hero-tag {
             display: inline-block;
-            background: rgba(0, 240, 255, 0.1);
-            border: 1px solid var(--accent-cyan);
-            color: var(--accent-cyan);
+            background: rgba(0, 82, 204, 0.08);
+            border: 1px solid rgba(0, 82, 204, 0.2);
+            color: var(--accent-blue);
             padding: 0.4rem 1rem;
             border-radius: 50px;
             font-size: 0.85rem;
-            font-weight: 600;
+            font-weight: 700;
             margin-bottom: 1.5rem;
             letter-spacing: 0.5px;
         }
 
         .hero h1 {
             font-family: var(--font-main);
-            font-size: 3rem;
+            font-size: 3.1rem;
             line-height: 1.2;
             margin-bottom: 1.5rem;
             font-weight: 800;
+            color: var(--accent-dark);
             letter-spacing: -0.5px;
         }
 
         .hero h1 span {
-            background: linear-gradient(90deg, var(--accent-cyan), var(--accent-blue));
+            background: linear-gradient(90deg, var(--accent-blue), var(--accent-cyan));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
@@ -185,14 +174,14 @@
             display: flex;
             gap: 2.5rem;
             padding-top: 2rem;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            border-top: 1px solid var(--border-subtle);
         }
 
         .stat-item h3 {
             font-family: var(--font-main);
             font-size: 2.2rem;
             font-weight: 800;
-            color: #fff;
+            color: var(--accent-blue);
             letter-spacing: -0.5px;
         }
 
@@ -200,27 +189,31 @@
             font-size: 0.85rem;
             color: var(--text-muted);
             margin: 0;
-            font-weight: 500;
+            font-weight: 600;
         }
 
         .hero-image-card {
             position: relative;
-            border-radius: 16px;
+            border-radius: 20px;
             overflow: hidden;
-            border: 1px solid var(--border-glow);
-            box-shadow: 0 20px 50px rgba(0,0,0,0.8);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
+            border: 1px solid var(--border-subtle);
         }
 
         .hero-image-card img {
             width: 100%;
             height: auto;
             display: block;
-            filter: brightness(0.9) contrast(1.1);
+            transition: transform 0.5s ease;
+        }
+
+        .hero-image-card:hover img {
+            transform: scale(1.03);
         }
 
         /* Sections General */
         section {
-            padding: 100px 8%;
+            padding: 90px 8%;
             position: relative;
             z-index: 1;
         }
@@ -228,13 +221,14 @@
         .section-title {
             text-align: center;
             max-width: 750px;
-            margin: 0 auto 4rem auto;
+            margin: 0 auto 3.5rem auto;
         }
 
         .section-title h2 {
             font-family: var(--font-main);
             font-size: 2.4rem;
             font-weight: 800;
+            color: var(--accent-dark);
             margin-bottom: 1rem;
             letter-spacing: -0.5px;
         }
@@ -244,54 +238,93 @@
             font-size: 1.05rem;
         }
 
-        /* Quem Somos & Propósito */
+        /* Estrutura - Galeria de Fotos */
+        .structure-gallery {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .structure-main-img {
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.08);
+            border: 1px solid var(--border-subtle);
+            height: 100%;
+        }
+
+        .structure-main-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .structure-subgrid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+        }
+
+        .structure-card {
+            background: var(--bg-card);
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid var(--border-subtle);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.04);
+            transition: transform 0.3s ease;
+        }
+
+        .structure-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .structure-card img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .structure-card p {
+            padding: 0.8rem 1rem;
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: var(--accent-dark);
+            text-align: center;
+        }
+
+        /* Quem Somos */
         .about-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 3rem;
-            align-items: center;
+            gap: 2.5rem;
         }
 
         .about-card {
             background: var(--bg-card);
-            border: 1px solid rgba(255, 255, 255, 0.08);
+            border: 1px solid var(--border-subtle);
             border-radius: 16px;
-            padding: 3rem;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            padding: 2.8rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.03);
         }
 
         .about-card h3 {
             font-family: var(--font-main);
             font-size: 1.8rem;
-            font-weight: 700;
-            color: var(--accent-cyan);
-            margin-bottom: 1.5rem;
+            font-weight: 800;
+            color: var(--accent-blue);
+            margin-bottom: 1.2rem;
         }
 
         .about-card p {
             color: var(--text-muted);
             line-height: 1.8;
-            margin-bottom: 1.2rem;
+            margin-bottom: 1rem;
         }
 
-        .pill-list {
-            display: flex;
-            gap: 1rem;
-            flex-wrap: wrap;
-            margin-top: 1.5rem;
-        }
-
-        .pill-item {
-            background: rgba(0, 240, 255, 0.08);
-            border: 1px solid rgba(0, 240, 255, 0.3);
-            color: #fff;
-            padding: 0.5rem 1.2rem;
-            border-radius: 50px;
-            font-size: 0.9rem;
-            font-weight: 600;
-        }
-
-        /* Soluções e Áreas de Atuação */
+        /* Soluções & Cards */
         .grid-3 {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -300,39 +333,37 @@
 
         .card {
             background: var(--bg-card);
-            border: 1px solid rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--border-subtle);
             padding: 2.5rem;
             border-radius: 16px;
             transition: all 0.3s ease;
-            position: relative;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.02);
         }
 
         .card:hover {
-            background: var(--bg-card-hover);
-            border-color: var(--accent-cyan);
-            transform: translateY(-6px);
-            box-shadow: 0 15px 35px rgba(0, 240, 255, 0.15);
+            border-color: var(--accent-blue);
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0, 82, 204, 0.08);
         }
 
         .card-icon {
             width: 55px;
             height: 55px;
-            background: rgba(0, 240, 255, 0.1);
-            border: 1px solid var(--accent-cyan);
+            background: rgba(0, 82, 204, 0.08);
             border-radius: 12px;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: var(--accent-cyan);
+            color: var(--accent-blue);
             font-size: 1.6rem;
             margin-bottom: 1.5rem;
         }
 
         .card h3 {
             font-size: 1.35rem;
-            margin-bottom: 1rem;
-            font-family: var(--font-main);
+            margin-bottom: 0.8rem;
             font-weight: 700;
+            color: var(--accent-dark);
         }
 
         .card p {
@@ -349,16 +380,17 @@
         }
 
         .value-card {
-            background: rgba(15, 20, 29, 0.6);
-            border: 1px solid rgba(255, 255, 255, 0.05);
+            background: var(--bg-card);
+            border: 1px solid var(--border-subtle);
             padding: 1.8rem;
             border-radius: 12px;
             text-align: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.02);
         }
 
         .value-card h4 {
-            color: var(--accent-cyan);
-            font-size: 1.1rem;
+            color: var(--accent-blue);
+            font-size: 1.05rem;
             margin-bottom: 0.5rem;
             font-weight: 700;
         }
@@ -368,28 +400,28 @@
             font-size: 0.88rem;
         }
 
-        /* Métricas, Prêmios e Reclame AQUI */
+        /* Métricas e Prêmios */
         .awards-banner {
-            background: linear-gradient(135deg, rgba(15, 20, 29, 0.95), rgba(22, 32, 48, 0.95));
-            border: 1px solid var(--border-glow);
+            background: var(--bg-card);
+            border: 1px solid var(--border-subtle);
             border-radius: 20px;
             padding: 3.5rem 3rem;
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 3rem;
             align-items: center;
-            box-shadow: 0 20px 50px rgba(0,0,0,0.6);
+            box-shadow: 0 10px 40px rgba(0,0,0,0.04);
         }
 
         .metrics-subgrid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 2rem;
+            gap: 1.5rem;
         }
 
         .metric-box {
-            background: rgba(7, 9, 14, 0.6);
-            border: 1px solid rgba(255, 255, 255, 0.08);
+            background: var(--bg-light);
+            border: 1px solid var(--border-subtle);
             padding: 1.5rem;
             border-radius: 12px;
             text-align: center;
@@ -397,16 +429,16 @@
 
         .metric-box h2 {
             font-family: var(--font-main);
-            font-size: 2.8rem;
+            font-size: 2.5rem;
             font-weight: 800;
-            color: var(--accent-cyan);
+            color: var(--accent-blue);
             margin-bottom: 0.3rem;
         }
 
         .metric-box p {
             color: var(--text-muted);
-            font-size: 0.9rem;
-            font-weight: 500;
+            font-size: 0.85rem;
+            font-weight: 600;
         }
 
         .award-info h3 {
@@ -415,22 +447,18 @@
             font-weight: 800;
             color: var(--accent-gold);
             margin-bottom: 1rem;
-            display: flex;
-            align-items: center;
-            gap: 10px;
         }
 
         .award-info p {
             color: var(--text-muted);
             line-height: 1.7;
-            margin-bottom: 1.5rem;
+            margin-bottom: 1.2rem;
         }
 
         .badge-ra1000 {
             display: inline-flex;
             align-items: center;
-            gap: 10px;
-            background: rgba(255, 183, 3, 0.1);
+            background: rgba(217, 119, 6, 0.1);
             border: 1px solid var(--accent-gold);
             color: var(--accent-gold);
             padding: 0.6rem 1.2rem;
@@ -439,58 +467,59 @@
             font-size: 0.9rem;
         }
 
-        /* Parceiros B2B */
+        /* Parceiros */
         .partners-section {
             text-align: center;
-            background: rgba(15, 20, 29, 0.3);
-            border-top: 1px solid rgba(255, 255, 255, 0.05);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            background: #ffffff;
+            border-top: 1px solid var(--border-subtle);
+            border-bottom: 1px solid var(--border-subtle);
         }
 
         .partners-grid {
             display: flex;
             justify-content: center;
             align-items: center;
-            gap: 4rem;
+            gap: 3rem;
             flex-wrap: wrap;
-            margin-top: 2.5rem;
+            margin-top: 2rem;
         }
 
         .partner-card {
-            background: rgba(255, 255, 255, 0.03);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            padding: 1.5rem 3rem;
+            background: var(--bg-light);
+            border: 1px solid var(--border-subtle);
+            padding: 1.2rem 2.8rem;
             border-radius: 12px;
             font-family: var(--font-main);
-            font-size: 1.6rem;
+            font-size: 1.5rem;
             font-weight: 800;
-            color: var(--text-main);
+            color: var(--accent-dark);
             letter-spacing: 1px;
             transition: all 0.3s ease;
         }
 
         .partner-card:hover {
-            border-color: var(--accent-cyan);
-            color: var(--accent-cyan);
+            border-color: var(--accent-blue);
+            color: var(--accent-blue);
             transform: translateY(-3px);
-            box-shadow: 0 10px 25px rgba(0, 240, 255, 0.2);
         }
 
-        /* Contact Section */
+        /* Contato */
         .contact-container {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 4rem;
             background: var(--bg-card);
-            border: 1px solid var(--border-glow);
+            border: 1px solid var(--border-subtle);
             border-radius: 20px;
-            padding: 4rem;
+            padding: 3.5rem;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.04);
         }
 
         .contact-info h2 {
             font-family: var(--font-main);
             font-size: 2.2rem;
             font-weight: 800;
+            color: var(--accent-dark);
             margin-bottom: 1rem;
         }
 
@@ -505,18 +534,17 @@
             gap: 1rem;
             margin-bottom: 1.5rem;
             color: var(--text-main);
-            font-size: 1.05rem;
         }
 
         .contact-icon {
             width: 45px;
             height: 45px;
-            background: rgba(0, 240, 255, 0.1);
+            background: rgba(0, 82, 204, 0.08);
             border-radius: 8px;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: var(--accent-cyan);
+            color: var(--accent-blue);
             font-size: 1.2rem;
         }
 
@@ -528,24 +556,23 @@
 
         .form-group input, .form-group textarea {
             width: 100%;
-            background: rgba(7, 9, 14, 0.8);
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            background: var(--bg-light);
+            border: 1px solid var(--border-subtle);
             padding: 1rem;
             border-radius: 8px;
-            color: #fff;
+            color: var(--text-main);
             font-family: var(--font-main);
             font-size: 0.95rem;
             outline: none;
-            transition: border-color 0.3s;
         }
 
         .form-group input:focus, .form-group textarea:focus {
-            border-color: var(--accent-cyan);
+            border-color: var(--accent-blue);
         }
 
         .btn-submit {
-            background: linear-gradient(135deg, var(--accent-cyan), var(--accent-blue));
-            color: #000;
+            background: linear-gradient(135deg, var(--accent-blue), var(--accent-cyan));
+            color: #fff;
             border: none;
             padding: 1rem;
             border-radius: 8px;
@@ -556,16 +583,15 @@
         }
 
         .btn-submit:hover {
-            box-shadow: 0 0 25px rgba(0, 240, 255, 0.5);
+            box-shadow: 0 6px 20px rgba(0, 82, 204, 0.3);
             transform: translateY(-2px);
         }
 
         /* Footer */
         footer {
-            background: #030406;
-            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            background: #0f172a;
             padding: 80px 8% 40px;
-            color: var(--text-muted);
+            color: #94a3b8;
         }
 
         .footer-grid {
@@ -579,7 +605,6 @@
             color: #fff;
             margin-bottom: 1.5rem;
             font-size: 1.1rem;
-            font-family: var(--font-main);
             font-weight: 700;
         }
 
@@ -592,37 +617,32 @@
         }
 
         .footer-col ul li a {
-            color: var(--text-muted);
+            color: #94a3b8;
             text-decoration: none;
             transition: color 0.3s;
         }
 
         .footer-col ul li a:hover {
-            color: var(--accent-cyan);
+            color: #00f0ff;
         }
 
         .footer-bottom {
             text-align: center;
             padding-top: 2rem;
-            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
             font-size: 0.85rem;
         }
 
         @media (max-width: 968px) {
-            .hero { grid-template-columns: 1fr; text-align: center; padding-top: 140px; }
-            .hero p { margin: 0 auto 2.5rem; }
+            .hero, .about-grid, .structure-gallery, .awards-banner, .contact-container { grid-template-columns: 1fr; }
+            .structure-subgrid { grid-template-columns: 1fr 1fr; }
             .hero-stats-banner { justify-content: center; }
-            .about-grid, .awards-banner, .contact-container { grid-template-columns: 1fr; }
             .footer-grid { grid-template-columns: 1fr 1fr; }
             .nav-links { display: none; }
         }
     </style>
 </head>
 <body>
-
-    <div class="glow-sphere glow-1"></div>
-    <div class="glow-sphere glow-2"></div>
-    <div class="glow-sphere glow-3"></div>
 
     <!-- Navigation -->
     <nav>
@@ -632,6 +652,7 @@
         </a>
         <ul class="nav-links">
             <li><a href="#quem-somos">Quem Somos</a></li>
+            <li><a href="#estrutura">Estrutura</a></li>
             <li><a href="#solucoes">Soluções B2B</a></li>
             <li><a href="#valores">Valores</a></li>
             <li><a href="#premios">Métricas & Prêmios</a></li>
@@ -640,7 +661,7 @@
         <a href="#contato" class="btn-cta">Fale Conosco</a>
     </nav>
 
-    <!-- Hero Section -->
+    <!-- Hero Section com Imagem de Cassino 3D de Destaque -->
     <section class="hero">
         <div>
             <span class="hero-tag">OPERAÇÃO 24/7 & INTELIGÊNCIA B2B</span>
@@ -662,12 +683,43 @@
             </div>
         </div>
         <div class="hero-image-card">
-            <img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=800&q=80" alt="Central de Operações BrasGaming">
+            <img src="https://images.unsplash.com/photo-1518609878373-06d740f60d8b?auto=format&fit=crop&w=1000&q=80" alt="Plataforma Digital e Cassino 3D de Alta Tecnologia">
+        </div>
+    </section>
+
+    <!-- TAB / Seção de Estrutura Física com Fotos Anexadas -->
+    <section id="estrutura">
+        <div class="section-title">
+            <h2>Nossa Estrutura Física</h2>
+            <p>Infraestrutura moderna e de alta tecnologia projetada para suportar operações críticas 24/7 com máxima segurança e conforto para nossos especialistas.</p>
+        </div>
+        <div class="structure-gallery">
+            <div class="structure-main-img">
+                <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=800&q=80" alt="Sede da Empresa em Campina Grande PB">
+            </div>
+            <div class="structure-subgrid">
+                <div class="structure-card">
+                    <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=500&q=80" alt="Recepção e Acesso">
+                    <p>Recepção & Acesso</p>
+                </div>
+                <div class="structure-card">
+                    <img src="https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&fit=crop&w=500&q=80" alt="Salas de Reunião">
+                    <p>Salas de Reunião</p>
+                </div>
+                <div class="structure-card">
+                    <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=500&q=80" alt="Estações de Gestão">
+                    <p>Estações de Gestão</p>
+                </div>
+                <div class="structure-card">
+                    <img src="https://images.unsplash.com/photo-1517502884422-41eaead166d4?auto=format&fit=crop&w=500&q=80" alt="Espaço de Descompressão">
+                    <p>Área de Convivência</p>
+                </div>
+            </div>
         </div>
     </section>
 
     <!-- Quem Somos & Propósito -->
-    <section id="quem-somos">
+    <section id="quem-somos" style="background: #ffffff;">
         <div class="section-title">
             <h2>Nossa História e Propósito</h2>
             <p>Inovação e excelência técnica impulsionadas do polo tecnológico de Campina Grande para o mundo.</p>
@@ -675,18 +727,13 @@
         <div class="about-grid">
             <div class="about-card">
                 <h3>Quem Somos</h3>
-                <p>A <strong>BrasGaming</strong> nasceu em <strong>Campina Grande, Paraíba</strong> — cidade reconhecida por sua força em tecnologia, inovação e formação de talentos. Desde o início, fomos criados com o propósito de oferecer soluções digitais e atendimento especializado, conectando pessoas, tecnologia e eficiência.</p>
-                <p>Fundada em <strong>2020</strong>, iniciamos nossa trajetória acompanhando o crescimento acelerado das plataformas online e a necessidade do mercado por um atendimento cada vez mais ágil, humano e profissional.</p>
+                <p>A <strong>BrasGaming</strong> nasceu em <strong>Campina Grande, Paraíba</strong> — cidade reconhecida por sua força em tecnologia, inovação e formação de talentos.[cite: 1] Desde o início, fomos criados com o propósito de oferecer soluções digitais e atendimento especializado, conectando pessoas, tecnologia e eficiência.[cite: 1]</p>
+                <p>Fundada em <strong>2020</strong>, iniciamos nossa trajetória acompanhando o crescimento acelerado das plataformas online e a necessidade do mercado por um atendimento cada vez mais ágil, humano e profissional.[cite: 1]</p>
             </div>
             <div class="about-card">
                 <h3>Nosso Propósito</h3>
-                <p>Oferecer atendimento e suporte digital com <strong>Qualidade, Agilidade e Responsabilidade</strong>, gerando valor contínuo para nossas empresas parceiras e usuários finais.</p>
-                <p>Com atuação terceirizada B2B, atuamos como um braço estratégico das operações digitais, garantindo controle, eficiência e redução drástica de custos.</p>
-                <div class="pill-list">
-                    <span class="pill-item">Atendimento Humanizado</span>
-                    <span class="pill-item">Operação 24/7</span>
-                    <span class="pill-item">Prevenção a Fraudes</span>
-                </div>
+                <p>Oferecer atendimento e suporte digital com <strong>Qualidade, Agilidade e Responsabilidade</strong>, gerando valor contínuo para nossas empresas parceiras e usuários finais.[cite: 1]</p>
+                <p>Com atuação terceirizada B2B, atuamos como um braço estratégico das operações digitais, garantindo controle, eficiência e redução drástica de custos.[cite: 1]</p>
             </div>
         </div>
     </section>
@@ -695,77 +742,77 @@
     <section id="solucoes">
         <div class="section-title">
             <h2>Áreas de Atuação e Soluções</h2>
-            <p>Estrutura completa de suporte e segurança adaptada para cada cliente e parceiro.</p>
+            <p>Estrutura completa de suporte e segurança adaptada para cada cliente e parceiro.[cite: 1]</p>
         </div>
         <div class="grid-3">
             <div class="card">
                 <div class="card-icon">🛡️</div>
                 <h3>Segurança & Prevenção a Fraudes</h3>
-                <p>Monitoramento ativo e identificação proativa de comportamentos suspeitos, proteção contra golpes operacionais e análises rigorosas de risco para blindar sua plataforma.</p>
+                <p>Monitoramento ativo e identificação proativa de comportamentos suspeitos, proteção contra golpes operacionais e análises rigorosas de risco para blindar sua plataforma.[cite: 1]</p>
             </div>
             <div class="card">
                 <div class="card-icon">💬</div>
                 <h3>Atendimento Multi-Canal</h3>
-                <p>Suporte omnicanal via Chat ao Vivo, Voz, E-mail e gestão especializada na plataforma <strong>Reclame AQUI</strong>, mantendo altas taxas de satisfação (CSAT).</p>
+                <p>Suporte omnicanal via Chat ao Vivo, Voz, E-mail e gestão especializada na plataforma <strong>Reclame AQUI</strong>, mantendo altas taxas de satisfação (CSAT).[cite: 1]</p>
             </div>
             <div class="card">
                 <div class="card-icon">📊</div>
                 <h3>Gestão de CRM & Relacionamento</h3>
-                <p>Controle e rastreabilidade total das interações com clientes, otimização de fluxos de engajamento e melhoria contínua na retenção de usuários.</p>
+                <p>Controle e rastreabilidade total das interações com clientes, otimização de fluxos de engajamento e melhoria contínua na retenção de usuários.[cite: 1]</p>
             </div>
             <div class="card">
                 <div class="card-icon">⚖️</div>
                 <h3>Compliance & Monitoramento</h3>
-                <p>Acompanhamento regulatório rigoroso, monitoramento continuo das operações e garantia de conformidade com os padrões do setor de apostas e jogos.</p>
+                <p>Acompanhamento regulatório rigoroso, monitoramento continuo das operações e garantia de conformidade com os padrões do setor de apostas e jogos.[cite: 1]</p>
             </div>
             <div class="card">
                 <div class="card-icon">⚙️</div>
                 <h3>Melhoria de Processos Operacionais</h3>
-                <p>Otimização constante de fluxos de suporte para promover maior eficiência operacional, reduzindo gargalos e custos de atendimento B2B.</p>
+                <p>Otimização constante de fluxos de suporte para promover maior eficiência operacional, reduzindo gargalos e custos de atendimento B2B.[cite: 1]</p>
             </div>
             <div class="card">
                 <div class="card-icon">👥</div>
                 <h3>Equipe Especializada e Treinada</h3>
-                <p>Profissionais capacitados para análises críticas e suporte contínuo em cenários de alta demanda e picos de acessos.</p>
+                <p>Profissionais capacitados para análises críticas e suporte contínuo em cenários de alta demanda e picos de acessos.[cite: 1]</p>
             </div>
         </div>
     </section>
 
     <!-- Valores -->
-    <section id="valores">
+    <section id="valores" style="background: #ffffff;">
         <div class="section-title">
             <h2>Nossos Valores</h2>
-            <p>Os pilares fundamentais que guiam nossas relações operacionais e parcerias B2B.</p>
+            <p>Os pilares fundamentais que guiam nossas relações operacionais e parcerias B2B.[cite: 1]</p>
         </div>
         <div class="values-grid">
             <div class="value-card">
                 <h4>Compromisso com Qualidade</h4>
-                <p>Atenção rigorosa aos detalhes para garantir um atendimento rápido e eficaz.</p>
+                <p>Atenção rigorosa aos detalhes para garantir um atendimento rápido e eficaz.[cite: 1]</p>
             </div>
             <div class="value-card">
                 <h4>Ética e Transparência</h4>
-                <p>Atuação com absoluto profissionalismo e respeito em todas as relações corporativas.</p>
+                <p>Atuação com absoluto profissionalismo e respeito em todas as relações corporativas.[cite: 1]</p>
             </div>
             <div class="value-card">
                 <h4>Valorização das Pessoas</h4>
-                <p>Acreditar no desenvolvimento constante das equipes como base para a excelência.</p>
+                <p>Acreditar no desenvolvimento constante das equipes como base para a excelência.[cite: 1]</p>
             </div>
             <div class="value-card">
                 <h4>Inovação e Melhoria Contínua</h4>
-                <p>Busca incessante por novas tecnologias para acompanhar o mercado digital.</p>
+                <p>Busca incessante por novas tecnologias para acompanhar o mercado digital.[cite: 1]</p>
             </div>
             <div class="value-card">
                 <h4>Responsabilidade e Confiança</h4>
-                <p>Construção de parcerias sólidas, sustentáveis e pautadas pela transparência.</p>
+                <p>Construção de parcerias sólidas, sustentáveis e pautadas pela transparência.[cite: 1]</p>
             </div>
         </div>
     </section>
 
-    <!-- Prêmios, Cases e Métricas -->
+    <!-- Prêmios e Métricas -->
     <section id="premios">
         <div class="section-title">
             <h2>Resultados Alcançados e Reconhecimento</h2>
-            <p>Métricas consolidadas de excelência operacional e reputação comprovada no mercado.</p>
+            <p>Métricas consolidadas de excelência operacional e reputação comprovada no mercado.[cite: 1]</p>
         </div>
         <div class="awards-banner">
             <div class="metrics-subgrid">
@@ -788,11 +835,11 @@
             </div>
             <div class="award-info">
                 <h3>🏆 Destaques & Cases de Sucesso</h3>
-                <p>A BrasGaming vem se destacando no mercado pela excelência e evolução contínua em atendimento, sendo reconhecida pelos principais indicadores de reputação do país:</p>
+                <p>A BrasGaming vem se destacando no mercado pela excelência e evolução contínua em atendimento, sendo reconhecida pelos principais indicadores de reputação do país:[cite: 1]</p>
                 <p>• <strong>Pixbet (Prêmio Reclame AQUI 2025):</strong> Reconhecimento como a empresa que mais evoluiu no setor.[cite: 1]</p>
                 <p>• <strong>Empresa Indicada ao Prêmio Reclame AQUI:</strong> Reforçando a confiança máxima dos usuários finais.[cite: 1]</p>
                 <div class="badge-ra1000">
-                    ⭐ Selo RA1000 nos Parceiros (Altos Padrões de Satisfação, Resposta e Solução)
+                    ⭐ Selo RA1000 nos Parceiros (Altos Padrões de Satisfação, Resposta e Solução)[cite: 1]
                 </div>
             </div>
         </div>
@@ -802,7 +849,7 @@
     <section id="parceiros" class="partners-section">
         <div class="section-title">
             <h2>Parceiros Atendidos</h2>
-            <p>Prestação de serviço B2B terceirizado para grandes plataformas de apostas online.</p>
+            <p>Prestação de serviço B2B terceirizado para grandes plataformas de apostas online.[cite: 1]</p>
         </div>
         <div class="partners-grid">
             <div class="partner-card">PIXBET</div>
@@ -821,21 +868,14 @@
                     <div class="contact-icon">📍</div>
                     <div>
                         <strong>Localização:</strong><br>
-                        Campina Grande - PB
+                        Campina Grande - PB[cite: 1]
                     </div>
                 </div>
                 <div class="contact-item">
                     <div class="contact-icon">📞</div>
                     <div>
                         <strong>Telefone / WhatsApp:</strong><br>
-                        (83) 99832-5647
-                    </div>
-                </div>
-                <div class="contact-item">
-                    <div class="contact-icon">🕒</div>
-                    <div>
-                        <strong>Atendimento Comercial:</strong><br>
-                        Operação 24 horas por dia, 7 dias por semana
+                        (83) 99832-5647[cite: 1]
                     </div>
                 </div>
             </div>
@@ -862,48 +902,40 @@
         <div class="footer-grid">
             <div>
                 <a href="#" class="logo" style="margin-bottom: 1rem;">
-                    <span class="logo-title">bras<span>gaming</span></span>
-                    <span class="logo-subtitle">Consulting and Services</span>
+                    <span class="logo-title" style="color: #fff;">bras<span style="color: #00f0ff;">gaming</span></span>
+                    <span class="logo-subtitle" style="color: #00f0ff;">Consulting and Services</span>
                 </a>
-                <p>Unindo tecnologia, pessoas e estratégia para oferecer suporte ágil, seguro e humanizado para plataformas digitais.</p>
+                <p>Unindo tecnologia, pessoas e estratégia para oferecer suporte ágil, seguro e humanizado para plataformas digitais.[cite: 1]</p>
             </div>
             <div class="footer-col">
                 <h4>Navegação</h4>
                 <ul>
                     <li><a href="#quem-somos">Quem Somos</a></li>
+                    <li><a href="#estrutura">Estrutura</a></li>
                     <li><a href="#solucoes">Soluções</a></li>
                     <li><a href="#valores">Valores</a></li>
-                    <li><a href="#premios">Métricas & Prêmios</a></li>
                 </ul>
             </div>
             <div class="footer-col">
                 <h4>Áreas de Atuação</h4>
                 <ul>
-                    <li>Prevenção a Fraudes</li>
-                    <li>Atendimento 24/7 (Chat, Voz, E-mail)</li>
-                    <li>Gestão de CRM & Reclame AQUI</li>
-                    <li>Compliance & Auditoria</li>
+                    <li>Prevenção a Fraudes[cite: 1]</li>
+                    <li>Atendimento 24/7 (Chat, Voz, E-mail)[cite: 1]</li>
+                    <li>Gestão de CRM & Reclame AQUI[cite: 1]</li>
                 </ul>
             </div>
             <div class="footer-col">
                 <h4>Contato</h4>
                 <ul>
-                    <li>📍 Campina Grande - PB</li>
-                    <li>📞 (83) 99832-5647</li>
-                    <li>🟢 Operação B2B Terceirizada</li>
+                    <li>📍 Campina Grande - PB[cite: 1]</li>
+                    <li>📞 (83) 99832-5647[cite: 1]</li>
                 </ul>
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2026 BrasGaming Consulting & Services. Todos os direitos reservados. Projeto desenvolvido com inovação e visão de futuro.</p>
+            <p>&copy; 2026 BrasGaming Consulting & Services. Todos os direitos reservados. Projeto desenvolvido com inovação e visão de futuro.[cite: 1]</p>
         </div>
     </footer>
 
 </body>
 </html>
-"""
-
-with open("index.html", "w", encoding="utf-8") as f:
-    f.write(updated_html)
-
-print("Código corrigido com a fonte Plus Jakarta Sans sem efeito esticado!")
