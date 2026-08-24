@@ -232,99 +232,24 @@
             }
         }
 
-        /* Seção de Retenção iGaming (Design 3D Integrado) */
-        .retention-section {
+        /* Seção Banner Full-Width (De Ponta a Ponta) */
+        .retention-section-full {
+            width: 100%;
             background-color: #ffffff;
-            padding: 90px 8%;
+            padding: 0;
+            margin: 0;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
             border-bottom: 1px solid var(--border-subtle);
         }
 
-        .retention-container {
-            display: grid;
-            grid-template-columns: 1fr 1.1fr;
-            gap: 4rem;
-            align-items: center;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .retention-image-box {
+        .retention-full-img {
             width: 100%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .retention-image-box img {
-            width: 100%;
-            max-width: 500px;
             height: auto;
-            object-fit: contain;
-            filter: drop-shadow(0 20px 30px rgba(0, 0, 0, 0.08));
-        }
-
-        .retention-content-box {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
-
-        .retention-dot-title {
-            display: flex;
-            align-items: flex-start;
-            gap: 12px;
-            margin-bottom: 1rem;
-        }
-
-        .green-dot {
-            width: 10px;
-            height: 10px;
-            background-color: var(--accent-ra-green);
-            border-radius: 50%;
-            margin-top: 14px;
-            flex-shrink: 0;
-        }
-
-        .retention-content-box h2 {
-            font-family: var(--font-main);
-            font-size: 2.2rem;
-            font-weight: 800;
-            color: var(--accent-dark);
-            line-height: 1.25;
-            letter-spacing: -0.5px;
-        }
-
-        .retention-content-box h2 span {
-            color: var(--accent-ra-green);
-        }
-
-        .retention-description {
-            color: var(--text-muted);
-            font-size: 1.05rem;
-            line-height: 1.7;
-            margin-bottom: 2rem;
-            padding-left: 22px;
-        }
-
-        .retention-grid-points {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 1.2rem 2rem;
-            padding-left: 22px;
-        }
-
-        .point-item {
-            display: flex;
-            align-items: flex-start;
-            gap: 8px;
-            color: var(--text-main);
-            font-size: 0.95rem;
-            font-weight: 600;
-        }
-
-        .point-bullet {
-            color: var(--accent-ra-green);
-            font-weight: 700;
+            display: block;
+            object-fit: cover;
         }
 
         /* Sections General */
@@ -891,10 +816,7 @@
         }
 
         @media (max-width: 968px) {
-            .hero, .retention-container, .about-grid, .ra-container, .structure-gallery, .awards-banner, .contact-container { grid-template-columns: 1fr; }
-            .retention-container { gap: 2.5rem; }
-            .retention-description, .retention-grid-points { padding-left: 0; }
-            .retention-grid-points { grid-template-columns: 1fr; gap: 1rem; }
+            .hero, .about-grid, .ra-container, .structure-gallery, .awards-banner, .contact-container { grid-template-columns: 1fr; }
             .structure-subgrid { grid-template-columns: 1fr 1fr; }
             .hero-stats-banner { justify-content: center; }
             .footer-grid { grid-template-columns: 1fr 1fr; }
@@ -948,43 +870,10 @@
         </div>
     </section>
 
-    <!-- Seção Retenção & Desempenho iGaming (Imagem 3D sem fundo anexada) -->
-    <section class="retention-section">
-        <div class="retention-container">
-            <div class="retention-image-box">
-                <img src="roleta-igaming.png" alt="Roleta 3D e Smartphone iGaming">
-            </div>
-            <div class="retention-content-box">
-                <div class="retention-dot-title">
-                    <span class="green-dot"></span>
-                    <h2>Aquisição não é o maior problema no <span>iGaming</span>.</h2>
-                </div>
-                
-                <p class="retention-description">
-                    Operadores perdem jogadores devido ao abandono de KYC, atrito no onboarding, CRM reativo e baixo engajamento no primeiro dia.
-                </p>
-
-                <div class="retention-grid-points">
-                    <div class="point-item">
-                        <span class="point-bullet">•</span>
-                        <span>Abandono no KYC</span>
-                    </div>
-                    <div class="point-item">
-                        <span class="point-bullet">•</span>
-                        <span>CRM sem execução humana</span>
-                    </div>
-                    <div class="point-item">
-                        <span class="point-bullet">•</span>
-                        <span>Baixa retenção inicial</span>
-                    </div>
-                    <div class="point-item">
-                        <span class="point-bullet">•</span>
-                        <span>Suporte focado em volume, não em desempenho</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+    <!-- Seção Banner Full-Width (Imagem de Ponta a Ponta) -->
+    <div class="retention-section-full">
+        <img src="banner-igaming.jpg" alt="Banner Soluções iGaming BrasGaming" class="retention-full-img">
+    </div>
 
     <!-- TAB EXCLUSIVA RECLAME AQUI -->
     <section id="reclame-aqui" class="reclameaqui-section">
