@@ -221,18 +221,12 @@
         }
 
         @keyframes float3d {
-            0% {
-                transform: translateY(0px);
-            }
-            50% {
-                transform: translateY(-10px);
-            }
-            100% {
-                transform: translateY(0px);
-            }
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
         }
 
-        /* Seção De Ponta a Ponta Ultrapanorâmica (Sem Distorção) */
+        /* Seção De Ponta a Ponta Ultrapanorâmica */
         .retention-section-fullwidth {
             width: 100vw;
             position: relative;
@@ -242,8 +236,6 @@
             margin-right: -50vw;
             background-color: #030712;
             padding: 0;
-            margin-top: 0;
-            margin-bottom: 0;
             overflow: hidden;
             display: flex;
             justify-content: center;
@@ -489,7 +481,7 @@
             margin-bottom: 1rem;
         }
 
-        /* Soluções & Cards */
+        /* Soluções & Cards (Com cores da marca BrasGaming) */
         .grid-3 {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -508,13 +500,13 @@
         .card:hover {
             border-color: var(--accent-blue);
             transform: translateY(-5px);
-            box-shadow: 0 15px 35px rgba(0, 82, 204, 0.08);
+            box-shadow: 0 15px 35px rgba(0, 82, 204, 0.12);
         }
 
         .card-icon {
             width: 55px;
             height: 55px;
-            background: rgba(0, 82, 204, 0.08);
+            background: rgba(0, 82, 204, 0.1);
             border-radius: 12px;
             display: flex;
             align-items: center;
@@ -527,8 +519,8 @@
         .card h3 {
             font-size: 1.35rem;
             margin-bottom: 0.8rem;
-            font-weight: 700;
-            color: var(--accent-dark);
+            font-weight: 800;
+            color: var(--accent-blue); /* Ajustado para a cor azul da marca */
         }
 
         .card p {
@@ -537,7 +529,7 @@
             line-height: 1.7;
         }
 
-        /* Valores */
+        /* Valores (Com cores da marca BrasGaming) */
         .values-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -551,13 +543,20 @@
             border-radius: 12px;
             text-align: center;
             box-shadow: 0 2px 10px rgba(0,0,0,0.02);
+            transition: all 0.3s ease;
+        }
+
+        .value-card:hover {
+            border-color: var(--accent-blue);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0, 82, 204, 0.1);
         }
 
         .value-card h4 {
-            color: var(--accent-blue);
+            color: var(--accent-blue); /* Ajustado para a cor azul da marca */
             font-size: 1.05rem;
             margin-bottom: 0.5rem;
-            font-weight: 700;
+            font-weight: 800;
         }
 
         .value-card p {
