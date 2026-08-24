@@ -232,24 +232,28 @@
             }
         }
 
-        /* Seção Banner Full-Width (De Ponta a Ponta) */
-        .retention-section-full {
-            width: 100%;
+        /* Seção com Imagem Expandida de Ponta a Ponta no Card */
+        .retention-section {
             background-color: #ffffff;
-            padding: 0;
-            margin: 0;
-            overflow: hidden;
-            display: flex;
-            justify-content: center;
-            align-items: center;
+            padding: 70px 8%;
             border-bottom: 1px solid var(--border-subtle);
         }
 
-        .retention-full-img {
+        .retention-container-wide {
+            max-width: 1200px;
+            margin: 0 auto;
             width: 100%;
-            height: auto;
-            display: block;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .retention-wide-img {
+            width: 100%;
+            max-height: 520px;
             object-fit: cover;
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
         }
 
         /* Sections General */
@@ -870,10 +874,12 @@
         </div>
     </section>
 
-    <!-- Seção Banner Full-Width (Imagem de Ponta a Ponta) -->
-    <div class="retention-section-full">
-        <img src="banner-igaming.jpg" alt="Banner Soluções iGaming BrasGaming" class="retention-full-img">
-    </div>
+    <!-- Seção com Imagem 3D Ocupando Todo o Espaço do Card -->
+    <section class="retention-section">
+        <div class="retention-container-wide">
+            <img src="roleta-igaming.png" alt="Tecnologia e Inovação no iGaming BrasGaming" class="retention-wide-img">
+        </div>
+    </section>
 
     <!-- TAB EXCLUSIVA RECLAME AQUI -->
     <section id="reclame-aqui" class="reclameaqui-section">
