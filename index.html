@@ -203,46 +203,48 @@
             font-weight: 600;
         }
 
-        /* Container do Card com Imagem Animada */
+        /* Container do Card Escuro Ajustado */
         .hero-image-card {
             position: relative;
-            border-radius: 24px;
+            border-radius: 20px;
             overflow: hidden;
             background: linear-gradient(135deg, #0b1329 0%, #172a54 100%);
             box-shadow: 0 25px 50px -12px rgba(0, 82, 204, 0.35);
             border: 2px solid rgba(0, 153, 255, 0.3);
-            padding: 2.5rem 2rem;
+            padding: 1.2rem;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            text-align: center;
+            width: 100%;
+            max-width: 520px;
+            margin: 0 auto;
         }
 
+        /* Imagem Proporcional e Animada */
         .hero-hero-img {
             width: 100%;
-            max-width: 420px;
-            height: auto;
-            border-radius: 16px;
+            height: 280px;
+            border-radius: 14px;
             object-fit: cover;
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
             animation: float3d 4s ease-in-out infinite;
         }
 
         @keyframes float3d {
             0% {
-                transform: translateY(0px) scale(1);
+                transform: translateY(0px);
             }
             50% {
-                transform: translateY(-10px) scale(1.02);
+                transform: translateY(-8px);
             }
             100% {
-                transform: translateY(0px) scale(1);
+                transform: translateY(0px);
             }
         }
 
         .hero-image-card .igaming-badge {
-            margin-top: 1.5rem;
+            margin-top: 1.2rem;
             background: rgba(0, 240, 255, 0.15);
             border: 1px solid #00f0ff;
             color: #00f0ff;
@@ -944,7 +946,7 @@
         <a href="#contato" class="btn-cta">Fale Conosco</a>
     </nav>
 
-    <!-- Hero Section com Imagem Animada -->
+    <!-- Hero Section com Imagem Ajustada -->
     <section class="hero">
         <div>
             <span class="hero-tag">OPERAÇÃO 24/7 & INTELIGÊNCIA B2B</span>
@@ -966,7 +968,6 @@
             </div>
         </div>
         <div class="hero-image-card">
-            <!-- Caminho configurado para arquivo local salvo no projeto -->
             <img src="imagem.jpeg" alt="Plataforma iGaming Futebol e Casino" class="hero-hero-img">
             <div class="igaming-badge">🛡️ Suporte & Anti-Fraude iGaming</div>
         </div>
